@@ -1,17 +1,7 @@
 #BENCHMARKING AND TABLES
-require(microbenchmark)
-require(stringr)
-aa <- function() regmatches(tt, regexpr("[0-9].*[0-9]", tt))
-bb <- function() gsub("[A-z \\.\\(\\)]", "", tt)
-cc <- function() str_extract(tt,'([0-9]|[0-9][-])+')
-
-microbenchmark(arun <- aa(), agstudy <- cc(), Jean <- bb(), times=25)
-
-identical(arun, agstudy) # TRUE
-identical(arun, Jean) # TRUE
-
 
 #some nfd benchmarks I had not done before
+require(microbenchmark)
 library(microbenchmark)
 library(normfluodbf)
 help("normfluodat")
